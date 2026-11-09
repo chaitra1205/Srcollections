@@ -1,19 +1,20 @@
 {
-  "name": "sairam-collections-website",
-  "version": "1.0.0",
-  "description": "Luxury jewellery e-commerce storefront for Sairam Collections with instant load animations, shopping bag, and WhatsApp checkout.",
-  "main": "index.html",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "keywords": [
-    "jewellery",
-    "sairam-collections",
-    "ecommerce",
-    "luxury",
-    "whatsapp-commerce"
-  ],
-  "author": "Sairam Collections",
-  "license": "MIT"
+    "name":  "sairam-collections-website",
+    "version":  "1.0.0",
+    "description":  "Luxury jewellery e-commerce storefront for Sairam Collections with instant load animations, shopping bag, and WhatsApp checkout.",
+    "main":  "index.html",
+    "scripts":  {
+                    "start":  "node server.js",
+                    "dev":  "node server.js",
+                    "build":  "echo \u0027Build complete\u0027"
+                },
+    "keywords":  [
+                     "jewellery",
+                     "sairam-collections",
+                     "ecommerce",
+                     "luxury",
+                     "whatsapp-commerce"
+                 ],
+    "author":  "Sairam Collections",
+    "license":  "MIT"
 }
