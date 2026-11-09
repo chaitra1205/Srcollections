@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sairam Collections | Quiet Luxury, Everyday Treasures</title>
+  <meta name="description" content="A home-grown studio crafting trendy, affordable jewellery for women, mothers and little ones — delivered straight from our hands in Karmanghat, Hyderabad to yours.">
+  <meta name="theme-color" content="#FAF7F2">
+
+  <!-- Favicon Monogram -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23C89B48'/><text x='50' y='65' font-size='48' font-family='serif' font-weight='bold' text-anchor='middle' fill='%23FFFFFF'>S</text></svg>">
+
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Phosphor Icons (Lightweight Vector Icons) -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+
+  <!-- Core & Animation Stylesheets -->
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="animations.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       TOP ANNOUNCEMENT BAR
+       ========================================================================= -->
+  <aside class="top-notice-bar" aria-label="Announcement">
+    <div class="container">
+      <span>✨ FESTIVE OFFER:</span> FREE SHIPPING ON ALL ORDERS OVER ₹1,499 &bull; DISPATCH WITHIN 24 HOURS
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       SITE HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="site-header animate-header">
+    <div class="container nav-inner">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Sairam Collections Home">
+        <div class="logo-badge">S</div>
+        <div class="brand-text">
+          <span class="brand-name">Sairam Collections</span>
+          <span class="brand-tagline">TRENDY &bull; AFFORDABLE &bull; ELEGANT</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#shop-catalog" class="nav-link">Shop</a>
+        <a href="#categories" class="nav-link">Categories</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#reviews" class="nav-link">Reviews</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions Right -->
+      <div class="nav-actions">
+        <!-- Instagram Link -->
+        <a href="https://instagram.com/sairamcollections" target="_blank" rel="noopener noreferrer" class="btn-icon-round" title="Follow us on Instagram" aria-label="Instagram">
+          <i class="ph ph-instagram-logo" style="font-size: 1.25rem;"></i>
+        </a>
+
+        <!-- Shopping Cart Trigger Button -->
+        <div class="cart-btn-wrap">
+          <button class="btn-icon-round" onclick="toggleCartDrawer(true)" title="View Shopping Bag" aria-label="View Shopping Bag">
+            <i class="ph ph-shopping-bag" style="font-size: 1.25rem;"></i>
+            <span class="cart-count-badge">0</span>
+          </button>
+        </div>
+
+        <!-- Shop Now Pill CTA Button -->
+        <a href="#shop-catalog" class="btn btn-primary btn-sm" style="display: none; @media(min-width: 640px){display: inline-flex;}">
+          SHOP NOW
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-toggle-btn" id="mobile-menu-btn" aria-label="Open Navigation Menu">
+          <i class="ph ph-list" style="font-size: 1.4rem;"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav-backdrop" id="mobile-backdrop"></div>
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+      <div class="brand-logo">
+        <div class="logo-badge">S</div>
+        <span class="brand-name" style="font-size: 1.2rem;">Sairam Collections</span>
+      </div>
+      <button id="mobile-close-btn" style="font-size: 1.5rem; color: var(--text-dark);">&times;</button>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 20px; font-size: 1.15rem; font-weight: 500;">
+      <a href="#home">Home</a>
+      <a href="#shop-catalog">Shop All</a>
+      <a href="#categories">Shop by Category</a>
+      <a href="#new-arrivals">New Arrivals</a>
+      <a href="#about">About Studio</a>
+      <a href="#reviews">Kind Words</a>
+      <a href="#faq">Frequently Asked</a>
+      <a href="#contact">Contact & WhatsApp</a>
+    </div>
+    <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid var(--border-light);">
+      <button class="btn btn-primary" style="width: 100%;" onclick="toggleCartDrawer(true)">
+        <i class="ph ph-shopping-bag"></i> View Bag (<span class="cart-count-badge" style="position: static; display: inline-flex; width: auto; height: auto; background: transparent;">0</span>)
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <!-- =========================================================================
+         SECTION 1: HERO SHOWCASE (With Immediate Entrance Animations)
+         ========================================================================= -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <!-- Hero Text Left -->
+        <div class="hero-content">
+          <span class="kicker animate-kicker">SAIRAM COLLECTIONS</span>
+          
+          <h1 class="hero-title">
+            <span class="title-line animate-hero-title-1">Quiet luxury,</span>
+            <span class="title-line italic-phrase gold-italic animate-hero-title-2">everyday treasures.</span>
+          </h1>
+
+          <p class="hero-description animate-hero-desc">
+            A home-grown studio crafting trendy, affordable jewellery for women, mothers and little ones &mdash; delivered straight from our hands to yours.
+          </p>
+
+          <div class="hero-actions animate-hero-actions">
+            <a href="#shop-catalog" class="btn btn-primary">
+              EXPLORE COLLECTION <i class="ph ph-arrow-right arrow-icon"></i>
+            </a>
+            <a href="https://wa.me/918885822322?text=Hello%20Sairam%20Collections!%20I%20would%20like%20to%20explore%20your%20jewellery%20collection." target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+              <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.15rem;"></i> CHAT ON WHATSAPP
+            </a>
+          </div>
+
+          <!-- Social Proof / Stats Row -->
+          <div class="hero-stats animate-hero-stats">
+            <div class="stat-item">
+              <span class="stat-number"><span class="stat-num" data-target="500">500</span>+</span>
+              <span class="stat-label">HAPPY CUSTOMERS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number"><span class="stat-num" data-target="120">120</span>+</span>
+              <span class="stat-label">UNIQUE DESIGNS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number"><span class="stat-num" data-target="4.9" data-decimals="1">4.9</span>★</span>
+              <span class="stat-label">AVERAGE RATING</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Right -->
+        <div class="hero-visual animate-hero-image-wrap">
+          <div class="hero-image-card">
+            <div class="hero-image-frame hero-image-inner">
+              <img src="assets/images/hero-jewellery-clean.jpg?v=3" alt="Sairam Collections handcrafted gold jewellery set on champagne satin" width="600" height="460">
+            </div>
+
+            <!-- Single Clean Floating Badge: Hand-packed orders -->
+            <div class="hero-floating-badge">
+              <span class="badge-icon">✨</span>
+              <div>
+                <div class="badge-text-primary">Hand-packed orders</div>
+                <div class="badge-text-secondary">Ready in 24 hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 2: TRUST / VALUE PROPOSITION BANNER
+         ========================================================================= -->
+    <section class="trust-bar-section" aria-label="Brand Guarantees">
+      <div class="container">
+        <div class="trust-bar-grid">
+          <div class="trust-item reveal-on-scroll stagger-1">
+            <i class="ph ph-truck trust-icon"></i>
+            <span>FREE SHIPPING OVER ₹1,499</span>
+          </div>
+          <div class="trust-item reveal-on-scroll stagger-2">
+            <i class="ph ph-shield-check trust-icon"></i>
+            <span>TRUSTED BY 500+ BUYERS</span>
+          </div>
+          <div class="trust-item reveal-on-scroll stagger-3">
+            <i class="ph ph-heart trust-icon"></i>
+            <span>PERSONALLY PACKED</span>
+          </div>
+          <div class="trust-item reveal-on-scroll stagger-4">
+            <i class="ph ph-gift trust-icon"></i>
+            <span>GIFT WRAP AVAILABLE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 3: SHOP BY CATEGORY ("Pieces for every occasion")
+         ========================================================================= -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-header section-header-flex reveal-on-scroll">
+          <div>
+            <span class="kicker">SHOP BY CATEGORY</span>
+            <h2 class="section-title">Pieces for every occasion</h2>
+          </div>
+          <a href="#shop-catalog" class="view-all-link">
+            VIEW ALL <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="category-grid">
+          <!-- 01 Earrings -->
+          <div class="category-card reveal-on-scroll stagger-1" onclick="filterByCategory('earrings')">
+            <img src="assets/images/cat-earrings.jpg" alt="Earrings - Studs, jhumkas and drops" class="category-card-img cat-img">
+            <div class="category-card-overlay">
+              <span class="cat-num">01</span>
+              <h3 class="cat-name">Earrings</h3>
+              <p class="cat-desc">Studs, jhumkas &amp; drops</p>
+            </div>
+          </div>
+
+          <!-- 02 Necklaces -->
+          <div class="category-card reveal-on-scroll stagger-2" onclick="filterByCategory('necklaces')">
+            <img src="assets/images/cat-necklaces.jpg" alt="Necklaces - Chains, chokers and layered sets" class="category-card-img cat-img">
+            <div class="category-card-overlay">
+              <span class="cat-num">02</span>
+              <h3 class="cat-name">Necklaces</h3>
+              <p class="cat-desc">Chains, chokers &amp; layered sets</p>
+            </div>
+          </div>
+
+          <!-- 03 Bangles -->
+          <div class="category-card reveal-on-scroll stagger-3" onclick="filterByCategory('bangles')">
+            <img src="assets/images/cat-bangles.jpg" alt="Bangles - Daily wear and festive stacks" class="category-card-img cat-img">
+            <div class="category-card-overlay">
+              <span class="cat-num">03</span>
+              <h3 class="cat-name">Bangles</h3>
+              <p class="cat-desc">Daily wear &amp; festive stacks</p>
+            </div>
+          </div>
+
+          <!-- 04 Kids Jewellery -->
+          <div class="category-card reveal-on-scroll stagger-4" onclick="filterByCategory('kids')">
+            <img src="assets/images/cat-kids.jpg" alt="Kids Jewellery - Gentle pieces for little ones" class="category-card-img cat-img">
+            <div class="category-card-overlay">
+              <span class="cat-num">04</span>
+              <h3 class="cat-name">Kids Jewellery</h3>
+              <p class="cat-desc">Gentle pieces for little ones</p>
+            </div>
+          </div>
+
+          <!-- 05 Bridal Collection -->
+          <div class="category-card reveal-on-scroll stagger-5" onclick="filterByCategory('bridal')">
+            <img src="assets/images/cat-bridal.jpg" alt="Bridal Collection - Heirloom sets for your big day" class="category-card-img cat-img">
+            <div class="category-card-overlay">
+              <span class="cat-num">05</span>
+              <h3 class="cat-name">Bridal Collection</h3>
+              <p class="cat-desc">Heirloom sets for your big day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 4: JUST IN / NEW ARRIVALS
+         ========================================================================= -->
+    <section class="section" id="new-arrivals" style="background-color: rgba(247, 242, 235, 0.45);">
+      <div class="container">
+        <div class="section-header section-header-flex reveal-on-scroll">
+          <div>
+            <span class="kicker">JUST IN</span>
+            <h2 class="section-title">New Arrivals</h2>
+          </div>
+          <a href="#shop-catalog" class="view-all-link">
+            VIEW ALL <i class="ph ph-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="arrivals-grid">
+          <!-- Card 1: Antique Gold Jhumka -->
+          <div class="product-card reveal-on-scroll stagger-1">
+            <div class="product-img-wrap">
+              <span class="product-badge">NEW</span>
+              <img src="assets/images/product-jhumka.jpg" alt="Antique Gold Jhumka" class="product-img">
+              <div class="product-card-actions">
+                <button class="btn btn-outline btn-sm" onclick="openQuickView('prod-1')">
+                  <i class="ph ph-eye"></i> Quick View
+                </button>
+                <button class="btn btn-primary btn-sm" onclick="addToCart('prod-1')">
+                  <i class="ph ph-shopping-bag"></i> Add
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <span class="product-category-tag">Earrings</span>
+              <h3 class="product-title">Antique Gold Jhumka</h3>
+              <p class="product-snippet">Hand-finished jhumkas with traditional motifs and delicate pearl drop beads.</p>
+              <div class="product-price-row">
+                <div>
+                  <span class="price-current">₹1,299</span>
+                  <span class="price-original">₹1,799</span>
+                </div>
+                <button class="btn-icon-round" onclick="orderItemDirectWhatsApp('prod-1')" title="Order on WhatsApp">
+                  <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Engraved Bangle Duo -->
+          <div class="product-card reveal-on-scroll stagger-2">
+            <div class="product-img-wrap">
+              <span class="product-badge">NEW</span>
+              <img src="assets/images/product-bangle-duo.jpg" alt="Engraved Bangle Duo" class="product-img">
+              <div class="product-card-actions">
+                <button class="btn btn-outline btn-sm" onclick="openQuickView('prod-2')">
+                  <i class="ph ph-eye"></i> Quick View
+                </button>
+                <button class="btn btn-primary btn-sm" onclick="addToCart('prod-2')">
+                  <i class="ph ph-shopping-bag"></i> Add
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <span class="product-category-tag">Bangles</span>
+              <h3 class="product-title">Engraved Bangle Duo</h3>
+              <p class="product-snippet">A pair of richly engraved bangles, perfect for festive stacks and special occasions.</p>
+              <div class="product-price-row">
+                <div>
+                  <span class="price-current">₹1,899</span>
+                  <span class="price-original">₹2,499</span>
+                </div>
+                <button class="btn-icon-round" onclick="orderItemDirectWhatsApp('prod-2')" title="Order on WhatsApp">
+                  <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Little Charm Bracelets -->
+          <div class="product-card reveal-on-scroll stagger-3">
+            <div class="product-img-wrap">
+              <span class="product-badge">NEW</span>
+              <img src="assets/images/product-charms.jpg" alt="Little Charm Bracelets" class="product-img">
+              <div class="product-card-actions">
+                <button class="btn btn-outline btn-sm" onclick="openQuickView('prod-3')">
+                  <i class="ph ph-eye"></i> Quick View
+                </button>
+                <button class="btn btn-primary btn-sm" onclick="addToCart('prod-3')">
+                  <i class="ph ph-shopping-bag"></i> Add
+                </button>
+              </div>
+            </div>
+            <div class="product-details">
+              <span class="product-category-tag">Kids Jewellery</span>
+              <h3 class="product-title">Little Charm Bracelets</h3>
+              <p class="product-snippet">Soft gold-tone bracelets with tiny heart charms &mdash; gentle pieces crafted for little ones.</p>
+              <div class="product-price-row">
+                <div>
+                  <span class="price-current">₹799</span>
+                  <span class="price-original">₹1,199</span>
+                </div>
+                <button class="btn-icon-round" onclick="orderItemDirectWhatsApp('prod-3')" title="Order on WhatsApp">
+                  <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 5: FULL CURATED CATALOG (Filterable & Searchable)
+         ========================================================================= -->
+    <section class="section" id="shop-catalog">
+      <div class="container">
+        <div class="section-header reveal-on-scroll">
+          <span class="kicker">CURATED COLLECTION</span>
+          <h2 class="section-title">Explore All Treasures</h2>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="filter-bar reveal-on-scroll">
+          <div class="filter-pills">
+            <button class="filter-pill active" data-category="all">All Pieces (8)</button>
+            <button class="filter-pill" data-category="earrings">Earrings</button>
+            <button class="filter-pill" data-category="necklaces">Necklaces</button>
+            <button class="filter-pill" data-category="bangles">Bangles</button>
+            <button class="filter-pill" data-category="kids">Kids Jewellery</button>
+            <button class="filter-pill" data-category="bridal">Bridal Collection</button>
+          </div>
+
+          <div class="filter-search-box">
+            <i class="ph ph-magnifying-glass filter-search-icon"></i>
+            <input type="text" id="catalog-search" class="filter-search-input" placeholder="Search jhumka, bangle, kundan...">
+          </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div class="arrivals-grid" id="products-grid">
+          <!-- Populated dynamically by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 6: ABOUT SAIRAM COLLECTIONS
+         ========================================================================= -->
+    <section class="section" id="about" style="padding-top: 20px;">
+      <div class="container">
+        <div class="about-card reveal-on-scroll">
+          <div>
+            <span class="kicker">OUR STUDIO STORY</span>
+            <h2 class="section-title" style="margin-bottom: 20px;">Handcrafted Elegance,<br>Made With Pure Love</h2>
+            <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.7; margin-bottom: 18px;">
+              Born in Karmanghat, Hyderabad, Sairam Collections began with a simple belief: luxury jewellery shouldn't be reserved only for special occasions or accompanied by intimidating price tags.
+            </p>
+            <p style="color: var(--text-muted); font-size: 0.98rem; line-height: 1.7;">
+              Every necklace, bangle, earring, and baby bracelet is hand-selected, quality checked, and personally packed with a handwritten note. From delicate everyday office wear to heirloom bridal statement sets, we bring quiet luxury directly to your doorstep across India.
+            </p>
+
+            <div class="about-features">
+              <div class="about-feat-item">
+                <div class="about-feat-icon"><i class="ph ph-sparkle"></i></div>
+                <div>
+                  <h4 style="font-size: 0.9rem; font-weight: 700;">Anti-Tarnish Polish</h4>
+                  <p style="font-size: 0.78rem; color: var(--text-muted);">High-durability gold vermeil finish</p>
+                </div>
+              </div>
+
+              <div class="about-feat-item">
+                <div class="about-feat-icon"><i class="ph ph-shield-check"></i></div>
+                <div>
+                  <h4 style="font-size: 0.9rem; font-weight: 700;">100% Skin Safe</h4>
+                  <p style="font-size: 0.78rem; color: var(--text-muted);">Lead &amp; nickel-free hypoallergenic alloy</p>
+                </div>
+              </div>
+
+              <div class="about-feat-item">
+                <div class="about-feat-icon"><i class="ph ph-package"></i></div>
+                <div>
+                  <h4 style="font-size: 0.9rem; font-weight: 700;">Hand-Packed In 24h</h4>
+                  <p style="font-size: 0.78rem; color: var(--text-muted);">Carefully boxed in luxury gift pouches</p>
+                </div>
+              </div>
+
+              <div class="about-feat-item">
+                <div class="about-feat-icon"><i class="ph ph-chats-circle"></i></div>
+                <div>
+                  <h4 style="font-size: 0.9rem; font-weight: 700;">Personal Support</h4>
+                  <p style="font-size: 0.78rem; color: var(--text-muted);">Direct founder chat via WhatsApp</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 1/1; box-shadow: var(--shadow-md);">
+            <img src="assets/images/hero-jewellery.jpg" alt="Artisan jewelry showcase" style="width: 100%; height: 100%; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 7: CUSTOMER REVIEWS ("KIND WORDS")
+         ========================================================================= -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-header reveal-on-scroll" style="text-align: center;">
+          <span class="kicker">KIND WORDS</span>
+          <h2 class="section-title">What our customers say</h2>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Card 1: Priya R. -->
+          <div class="review-card reveal-on-scroll stagger-1">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">&ldquo;Absolutely loved my jhumkas! Quality is beyond the price, and the packaging felt so premium.&rdquo;</p>
+            <div class="review-author">
+              <span class="author-name">Priya R.</span>
+              <span class="author-location">HYDERABAD</span>
+            </div>
+          </div>
+
+          <!-- Card 2: Anitha S. -->
+          <div class="review-card reveal-on-scroll stagger-2">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">&ldquo;Ordered the bridal set for my sister &mdash; every guest asked where it was from. Trustworthy seller!&rdquo;</p>
+            <div class="review-author">
+              <span class="author-name">Anitha S.</span>
+              <span class="author-location">BENGALURU</span>
+            </div>
+          </div>
+
+          <!-- Card 3: Meera K. -->
+          <div class="review-card reveal-on-scroll stagger-3">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">&ldquo;Beautiful kids bracelets for my daughter, perfectly sized. Will definitely order again.&rdquo;</p>
+            <div class="review-author">
+              <span class="author-name">Meera K.</span>
+              <span class="author-location">CHENNAI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 8: FREQUENTLY ASKED QUESTIONS
+         ========================================================================= -->
+    <section class="section" id="faq" style="background-color: rgba(247, 242, 235, 0.45);">
+      <div class="container">
+        <div class="section-header reveal-on-scroll" style="text-align: center;">
+          <span class="kicker">QUESTIONS</span>
+          <h2 class="section-title">Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-container">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item reveal-on-scroll stagger-1 active">
+            <button class="faq-question">
+              <span>How do I place an order?</span>
+              <span class="faq-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>You can add your favourite jewellery to your bag and tap &ldquo;Complete Order on WhatsApp&rdquo;, or message us directly with a screenshot or item name. We confirm your order instantly, share bank/UPI details, and dispatch within 24 hours.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item reveal-on-scroll stagger-2">
+            <button class="faq-question">
+              <span>What are the delivery times and charges?</span>
+              <span class="faq-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>We provide <strong>FREE SHIPPING</strong> across India on all orders over ₹1,499! For orders below ₹1,499, a nominal flat courier fee of ₹80 applies. Deliveries within Hyderabad arrive in 1-2 business days; metro cities in 3-4 days; rest of India in 4-6 days.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item reveal-on-scroll stagger-3">
+            <button class="faq-question">
+              <span>Can I customize jewellery pieces or bangle sizes?</span>
+              <span class="faq-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes! For bangles, we carry sizes 2.4, 2.6, 2.8, and 2.10. For necklace chain lengths or bridal requirements, please ping us directly on WhatsApp and we will happily assist with sizing and custom pairings.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item reveal-on-scroll stagger-4">
+            <button class="faq-question">
+              <span>What materials are used for Sairam Collections jewellery?</span>
+              <span class="faq-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>All our jewellery is crafted using high-grade brass alloy with premium 18K/24K micro gold plating and anti-tarnish protective lacquer. They are 100% nickel-free and lead-free, specifically curated to be safe on sensitive skin.</p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item reveal-on-scroll stagger-5">
+            <button class="faq-question">
+              <span>What is your exchange and return policy?</span>
+              <span class="faq-icon"><i class="ph ph-plus"></i></span>
+            </button>
+            <div class="faq-answer">
+              <p>Each parcel is hand-checked before dispatch. In the rare event of transit damage, simply record an unboxing video and notify us within 48 hours of delivery for an immediate free replacement or refund.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 9: CONTACT US
+         ========================================================================= -->
+    <section class="section" id="contact">
+      <div class="container">
+        <p class="contact-intro-text reveal-on-scroll">
+          We&rsquo;d love to hear from you. Whether it&rsquo;s a custom request, a question about an order, or just a hello &mdash; we respond personally to every message.
+        </p>
+
+        <div class="contact-cards-grid">
+          <!-- WhatsApp Card -->
+          <div class="contact-card reveal-on-scroll stagger-1">
+            <div class="contact-icon-badge">
+              <i class="ph ph-whatsapp-logo"></i>
+            </div>
+            <h3 class="contact-card-title">WhatsApp</h3>
+            <p class="contact-card-desc">Chat or call us at +91 88858 22322. We typically reply within an hour.</p>
+            <a href="https://wa.me/918885822322?text=Hello%20Sairam%20Collections!" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+              START CHAT &rarr;
+            </a>
+          </div>
+
+          <!-- Instagram Card -->
+          <div class="contact-card reveal-on-scroll stagger-2">
+            <div class="contact-icon-badge">
+              <i class="ph ph-instagram-logo"></i>
+            </div>
+            <h3 class="contact-card-title">Instagram</h3>
+            <p class="contact-card-desc">Follow along for new drops, styling tips and behind-the-scenes.</p>
+            <a href="https://instagram.com/sairamcollections" target="_blank" rel="noopener noreferrer" class="contact-card-link">
+              @SAIRAMCOLLECTIONS &rarr;
+            </a>
+          </div>
+
+          <!-- Email Card -->
+          <div class="contact-card reveal-on-scroll stagger-3">
+            <div class="contact-icon-badge">
+              <i class="ph ph-envelope-simple"></i>
+            </div>
+            <h3 class="contact-card-title">Email</h3>
+            <p class="contact-card-desc">For bulk orders, collaborations and queries.</p>
+            <a href="mailto:hello@sairamcollections.in" class="contact-card-link">
+              hello@sairamcollections.in &rarr;
+            </a>
+          </div>
+
+          <!-- Our Location Card -->
+          <div class="contact-card reveal-on-scroll stagger-4">
+            <div class="contact-icon-badge">
+              <i class="ph ph-map-pin"></i>
+            </div>
+            <h3 class="contact-card-title">Our Location</h3>
+            <p class="contact-card-desc">Home-based jewellery business in Karmanghat, Hyderabad. Shipping available throughout India.</p>
+            <a href="tel:+918885822322" class="contact-card-link">
+              +91 88858 22322 &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Working Hours Banner -->
+        <div class="hours-pill-banner reveal-on-scroll">
+          <i class="ph ph-clock"></i>
+          <span>Available Mon&ndash;Sat &bull; 10am to 8pm IST</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <div class="brand-logo" style="filter: brightness(1.2);">
+            <div class="logo-badge">S</div>
+            <span class="brand-name" style="color: #fff;">Sairam Collections</span>
+          </div>
+          <p>
+            Crafting trendy, affordable and hypoallergenic everyday jewellery. Delivered straight from our hands in Karmanghat, Hyderabad to yours.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop-catalog">Shop All</a></li>
+            <li><a href="#categories">Shop by Category</a></li>
+            <li><a href="#new-arrivals">New Arrivals</a></li>
+            <li><a href="#about">About Our Studio</a></li>
+          </ul>
+        </div>
+
+        <!-- Categories -->
+        <div>
+          <h4 class="footer-col-title">Collections</h4>
+          <ul class="footer-links">
+            <li><a href="javascript:void(0)" onclick="filterByCategory('earrings')">Earrings &amp; Jhumkas</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('necklaces')">Necklaces &amp; Sets</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('bangles')">Bangles &amp; Kadas</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('kids')">Kids Jewellery</a></li>
+            <li><a href="javascript:void(0)" onclick="filterByCategory('bridal')">Bridal Collection</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Support -->
+        <div>
+          <h4 class="footer-col-title">Get In Touch</h4>
+          <p style="color: #A39B92; font-size: 0.88rem; line-height: 1.6; margin-bottom: 14px;">
+            Karmanghat, Hyderabad, Telangana, India<br>
+            Phone / WhatsApp: +91 88858 22322<br>
+            Email: hello@sairamcollections.in
+          </p>
+          <div style="display: flex; gap: 10px; margin-top: 12px;">
+            <a href="https://wa.me/918885822322" target="_blank" rel="noopener noreferrer" class="btn-icon-round" style="background: #25221F; color: #fff; border-color: #383430;">
+              <i class="ph ph-whatsapp-logo" style="color: #25D366;"></i>
+            </a>
+            <a href="https://instagram.com/sairamcollections" target="_blank" rel="noopener noreferrer" class="btn-icon-round" style="background: #25221F; color: #fff; border-color: #383430;">
+              <i class="ph ph-instagram-logo"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Sairam Collections. All rights reserved. Handcrafted with love in Hyderabad.</div>
+        <div>Quiet luxury &bull; Everyday treasures</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       SHOPPING CART DRAWER
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" onclick="toggleCartDrawer(false)"></div>
+  <div class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Bag (<span class="cart-count-badge" style="position: static; display: inline-flex; width: auto; height: auto; background: transparent; color: var(--text-dark);">0</span>)</h3>
+      <button class="cart-close-btn" onclick="toggleCartDrawer(false)" aria-label="Close Bag">&times;</button>
+    </div>
+
+    <!-- Free Shipping Progress Tracker -->
+    <div class="free-shipping-tracker">
+      <div id="shipping-tracker-text">Add <strong>₹1,499</strong> more for <strong>FREE SHIPPING</strong></div>
+      <div class="shipping-progress-bar">
+        <div class="shipping-progress-fill" id="shipping-progress-fill"></div>
+      </div>
+    </div>
+
+    <!-- Items List -->
+    <div class="cart-items-list" id="cart-items-list">
+      <!-- Injected by script.js -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Estimated Subtotal</span>
+        <span id="cart-subtotal" class="text-gold">₹0</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%; margin-bottom: 10px;" onclick="checkoutWhatsApp()">
+        <i class="ph ph-whatsapp-logo" style="color: #25D366; font-size: 1.25rem;"></i> Complete Order on WhatsApp
+      </button>
+      <p style="text-align: center; font-size: 0.72rem; color: var(--text-muted);">
+        ✨ No payment required now &bull; Confirm items &amp; address directly on WhatsApp
+      </p>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       QUICK VIEW MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="quickview-modal" onclick="if(event.target === this) closeQuickView()">
+    <div id="quickview-content">
+      <!-- Injected dynamically by script.js -->
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FLOATING WHATSAPP BUTTON (With Pulse Ping Animation)
+       ========================================================================= -->
+  <a href="https://wa.me/918885822322?text=Hello%20Sairam%20Collections!%20I%20am%20visiting%20your%20website%20and%20would%20love%20to%20know%20more." target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn whatsapp-floating" title="Chat with us on WhatsApp" aria-label="Chat on WhatsApp">
+    <i class="ph-fill ph-whatsapp-logo"></i>
+  </a>
+
+  <!-- Application Script -->
+  <script src="script.js"></script>
+</body>
+</html>
